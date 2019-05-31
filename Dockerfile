@@ -1,4 +1,4 @@
-FROM testimage
+FROM petronije2002/completed_builder:latest
 
 RUN apk add --update curl alpine-sdk
 
@@ -9,19 +9,20 @@ RUN apk add --update curl alpine-sdk
 
 # RUN mkdir /install
 ENV PYTHONPATH /install
-COPY requirements.txt .
+# COPY requirements.txt .
 # RUN pip install --target=/install numpy 
 
 # RUN pip install --target=/install pandas
 
-RUN pip install --target=/install --no-deps -r requirements.txt
+RUN pip install --target=/install --no-deps (whatever you need to install)
 
 RUN rm -rf /var/cache/apk/*
 
 CMD ["/bin/sh"]
 
 
-
+# LATER ON !!! BUILD THIS TO THE 'NEW BUILDER' AND USE IT TOGETHER
+# WITH BASE TOM MAKE DOCKER YOU NEED
 
 
 
